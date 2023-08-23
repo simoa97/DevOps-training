@@ -19,5 +19,6 @@ new technologies and I think it is very important to keep applications running a
 4. Implement monitoring tools such prometheus/grafana, elk stack
 5. Implement security tools for scanning the image for vulnerabilities, SBOM creation, secret scanning, etc
 6. IaC
-7. Start again and improve the solution :fire:
+7. Ansible/puppet/pulumi
+8. Start again and improve the solution :fire:
 
