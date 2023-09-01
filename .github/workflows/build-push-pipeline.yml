@@ -7,8 +7,8 @@ name: Build a and push docker image to AWS ECR
 
 jobs:
 
-  build: Build image
-
+  build: 
+    name: Build image 
     runs-on: ubuntu-latest
 
     steps:
