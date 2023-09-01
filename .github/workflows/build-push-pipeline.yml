@@ -1,15 +1,15 @@
 name: Build a and push docker image to AWS ECR 
 
-on:
-  push:
-    branches:
+#on:
+#  push:
+#    branches: [main]
 
 
 jobs:
 
   build: Build image
 
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code 
