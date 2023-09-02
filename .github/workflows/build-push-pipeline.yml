@@ -34,7 +34,7 @@ jobs:
 
     - name: Build and Push image
       env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
         ECR_REPOSITORY: simoa97
         IMAGE_TAG: flask_app_image
       run: |
