@@ -35,7 +35,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: simoa97
-        IMAGE_TAG: flask_app_image:test
+        IMAGE_TAG: flask_app_image
       run: docker build . --file Dockerfile --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
     - name: troubleshooting
@@ -45,5 +45,5 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: simoa97
-        IMAGE_TAG: flask_app_image:test
+        IMAGE_TAG: flask_app_image
       run: docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
