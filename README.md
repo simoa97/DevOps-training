@@ -15,6 +15,7 @@ The project simulates a CI part of pipeline. After code is submitted to the repo
 
 **To-do list**
 - Implement DevSecOps tooling to make the project as vulnerability free as possible before pushing to registry (SBOM creation, secret scanning, image scan)
+- Update app with some simple content before deploying
 - Creat a CD pipeline - pull and deploy the image to VM as docker container or with container orchestration (maybe K3s)
 - Implement monitoring tools such prometheus/grafana, elk stack
 - IaC
