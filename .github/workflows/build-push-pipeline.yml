@@ -37,7 +37,7 @@ jobs:
       run: docker build . --file Dockerfile --tag $ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Trivy - install Trivy
-      run: apt-get install trivy
+      run: sudo apt-get install trivy
 
     - name: Trivy - Scan image for vulnerabilities
       run: trivy image $ECR_REPOSITORY:$IMAGE_TAG
