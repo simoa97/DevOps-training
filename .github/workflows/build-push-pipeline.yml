@@ -36,8 +36,10 @@ jobs:
     - name: Build image
       run: docker build . --file Dockerfile --tag $ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Trivy - Scan image for vulnerabilities
+    - name: Trivy - run Trivy
       run: docker run aquasec/trivy
+
+    - name: Trivy - Scan image for vulnerabilities
       run: trivy image $ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Push image
