@@ -12,6 +12,7 @@ The project simulates a CI part of pipeline. After code is submitted to the repo
 2. Dockerization of the app
 3. GitHub Action CI - build image
 4. GitHub Action CI - push to registry
+5. Added Trivy Action - scans image for vulnerabilities
 
 **To-do list**
 - Implement DevSecOps tooling to make the project as vulnerability free as possible before pushing to registry (SBOM creation, secret scanning, image scan)
