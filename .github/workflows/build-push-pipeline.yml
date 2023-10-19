@@ -36,8 +36,8 @@ jobs:
     - name: Build image
       run: docker build . --file Dockerfile --tag $ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Trivy - run Trivy
-      run: docker run aquasec/trivy
+    - name: Trivy - install Trivy
+      run: apt-get install trivy
 
     - name: Trivy - Scan image for vulnerabilities
       run: trivy image $ECR_REPOSITORY:$IMAGE_TAG
