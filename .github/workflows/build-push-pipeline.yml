@@ -36,11 +36,17 @@ jobs:
     - name: Build image
       run: docker build . --file Dockerfile --tag $ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Trivy - install Trivy
-      run: brew install aquasecurity/trivy/trivy
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: '$ECR_REPOSITORY:$IMAGE_TAG'
+        # format: 'sarif'
+        # output: 'trivy-results.sarif'
 
-    - name: Trivy - Scan image for vulnerabilities
-      run: trivy image $ECR_REPOSITORY:$IMAGE_TAG
+    # - name: Upload Trivy scan results to GitHub Security tab
+    #   uses: github/codeql-action/upload-sarif@v2
+    #   with:
+    #     sarif_file: 'trivy-results.sarif'
 
     - name: Push image
       run: docker push $ECR_REPOSITORY:$IMAGE_TAG
