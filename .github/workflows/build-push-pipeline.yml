@@ -1,4 +1,4 @@
-name: Build a and push docker image to AWS ECR 
+name: CI - build, test & push
 
 on:
   workflow_dispatch:
@@ -26,8 +26,6 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws-region: eu-west-1
-#        repo: simoa97
-#        create_repo: false
 
     - name: Login to AWS ECR
       id: login-ecr
