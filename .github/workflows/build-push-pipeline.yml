@@ -12,7 +12,7 @@ env:
 jobs:
 
   build: 
-    name: Build image, push to ECR
+    name: CI pipeline
     runs-on: ubuntu-latest
 
     steps:
@@ -38,13 +38,13 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-        # format: 'sarif'
-        # output: 'trivy-results.sarif'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
 
-    # - name: Upload Trivy scan results to GitHub Security tab
-    #   uses: github/codeql-action/upload-sarif@v2
-    #   with:
-    #     sarif_file: 'trivy-results.sarif'
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
 
     - name: Push image
       run: docker push $ECR_REPOSITORY:$IMAGE_TAG
