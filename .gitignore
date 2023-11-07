@@ -1,1 +1,4 @@
 __pycache__/app.cpython-310.pyc
+IaC/.terraform.lock.hcl
+IaC/terraform.tfstate
+IaC/.terraform/providers/registry.terraform.io/hashicorp/aws/5.24.0/linux_amd64/terraform-provider-aws_v5.24.0_x5
