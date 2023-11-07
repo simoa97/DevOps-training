@@ -5,6 +5,12 @@ on:
 #  push:
 #    branches: [main]
 
+# permissions for codeql to work
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 env:
   ECR_REPOSITORY: ${{ secrets.AWS_REPO }}
   IMAGE_TAG: ${{ github.event.repository.name }}
