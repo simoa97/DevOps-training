@@ -48,8 +48,8 @@ jobs:
       with:
         scan-type: image
         image-ref: ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-        format: 'github'
-        output: 'trivy-results.sarif'
+        format: 'json'
+        output: 'trivy-results.json'
 
     - name: Push image
       run: docker push $ECR_REPOSITORY:$IMAGE_TAG
