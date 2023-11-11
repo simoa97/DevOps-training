@@ -9,6 +9,11 @@ env:
   ECR_REPOSITORY: ${{ secrets.AWS_REPO }}
   IMAGE_TAG: ${{ github.event.repository.name }}
 
+name: gitleaks
+on:
+  pull_request:
+  push:
+
 jobs:
 
   build: 
@@ -16,6 +21,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+    - name: gitleaks scan
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Checkout code 
       uses: actions/checkout@v3
