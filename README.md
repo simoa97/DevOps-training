@@ -3,10 +3,9 @@
 This repository is created for purpose of practice with different DevOps tools. Final vision is to build a CI/CD pipeline for free and to practice various DevOps technologies. My goal is to train and practice various development processes, as I enjoy software development in my free time and a I would like to become SWE or DevOps engineer in the future. I really enjoy learning new technologies especially the part of automatization and optimatization of the development process from the commit all the way to the deployment. With this project I want to experience and use all the various technologies I learned in my free time or few things I was helping with in at my current job.
 
 ### Current state
-The project simulates a CI part of pipeline. After code is submitted to the repository (commit or pull request), gitleaks checks the commits for hard-coded secrets, then pipeline checks the functionality of the application by build out the docker image. If the docker image is successfully built, Trivy scans for vulnerabilities (it is not set up to fail) and after that it is pushed to AWS EC2 container registry for a better overview and organization of container images.
+The project simulates a CI part of pipeline. After code is submitted to the repository (commit or pull request), gitleaks checks the commits for hard-coded secrets, then pipeline checks the functionality of the application by build out the docker image. If the docker image is successfully built, Trivy scans for vulnerabilities (it is not set up to fail) and after that it is pushed to AWS Elastic Container Registry for a better overview and organization of container images. There is a start of CD pipeline in form of terraform which builds the infrastructure on which the container will be deployed.
 
-Currently working on IaC and after that deploying the docker container to EC2 instance. Troubleshooting a problem as AWS wont allow me to create EC2 with terraform nor manually.
-
+Currently working out on a best way how to deploy docker container to EC2 (maybe not the easiet task). Currently troubleshooting problems with TLS/SSL certificate.
 
 ### Tasks
 **Task Completed**
