@@ -16,13 +16,12 @@ Currently working on IaC and after that deploying the docker container to EC2 in
 4. GitHub Action CI - push to registry
 5. Added Trivy Action - scans container image for vulnerabilities (no fail is setup)
 6. Added gitleaks - scans the repository for commits containing secrets (API keys, passwords, etc.)
+7. Added IaC with terraform - created an EC2 instance where I will deploy the docker container
 
 **To-do list**
-- Implement DevSecOps tooling to make the project as vulnerability free as possible before pushing to registry (SBOM creation, secret scanning, image scan)
 - Update app with some simple content before deploying
 - Creat a CD pipeline - pull and deploy the image to VM as docker container or with container orchestration (maybe K3s)
 - Implement monitoring tools such prometheus/grafana, elk stack
-- IaC - deploy needed infrastructure with terraform
 
 **To-do but probably overkill**
 - Deploy the image with container orchestration platform (K8s)
